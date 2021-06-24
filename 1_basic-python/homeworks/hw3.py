@@ -73,5 +73,3 @@ def capitalizer(inString):
     # делает заглавной первую букву каждого слова в строке из введенных через пробел слов
     
     print(" ".join(int_func(word) for word in inString.split()))
-
-
