@@ -251,16 +251,16 @@ class ComplexNumber:
         
     def __add__(self, other):
         if isinstance(other, ComplexNumber):
-            if self.imagPart - other.imagPart != 0:
+            if self.imagPart + other.imagPart != 0:
                 return ComplexNumber(self.realPart + other.realPart, self.imagPart + other.imagPart)
             else:
-                return self.realPart - other.realPart        
+                return self.realPart + other.realPart        
         else:
             return ComplexNumber(self.realPart - other, self.imagPart)
     
     def __sub__(self, other):
         if isinstance(other, ComplexNumber):
-            if self.imagPart + other.imagPart != 0:
+            if self.imagPart - other.imagPart != 0:
                 return ComplexNumber(self.realPart - other.realPart, self.imagPart - other.imagPart)
             else:
                 return self.realPart - other.realPart
@@ -286,7 +286,7 @@ b = ComplexNumber(3, -1)
 c = ComplexNumber(1, 3)
 
 print(a + b) # (2+2i) + (3-1i) = 5+1i
-print(a - b*2) # (2+2i) - 2*(3-1i) = (2+2i) - (6-2i) = -4
+print(a - b*2) # (2+2i) - 2*(3-1i) = (2+2i) - (6-2i) = -4+4i
 print(b * c) # (3-1i) * (1 + 3i) = (3-(-3)) + (9i-1i) = 6+8i
 print(a / 2) # (2+2i) / 2 = 1+1i
 print(a / (b*3)) # (2+2i) / (3*(3-1i)) = 0.13333 + 0.26667i
